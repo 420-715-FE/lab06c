@@ -17,6 +17,7 @@
 * Ne pas oublier de faire toutes les validations nécessaires, les trim et les htmlspecialchars
 * S'assurer que les champs laissés vides deviennent NULL dans la BD et non '' (sauf la description)
 * Afficher page de modification après l'ajout
+* Image placeholder, par utilisateur Truongpd38  sur Wikipedia Commons (https://commons.wikimedia.org/wiki/File:DefaultImage.png), licence CC BY-SA 4.0
 
 ```html
 <form method="POST" enctype="multipart/form-data">
