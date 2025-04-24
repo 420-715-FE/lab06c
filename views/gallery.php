@@ -13,6 +13,7 @@ generateHTMLHeader('Galerie de photos');
 <nav>
     <ul>
         <li>Galerie</li>
+        <li><a href="?action=albums">Albums</a></li>
         <li><a href="?action=add_photo">Ajouter une photo</a></li>
     </ul>
 </nav>
