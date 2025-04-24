@@ -27,7 +27,6 @@ CREATE TABLE photo_tag (
 CREATE TABLE album (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) UNIQUE,
-    description TEXT,
     featured_photo_id INT,
     FOREIGN KEY (featured_photo_id) REFERENCES photo(id)
 );
@@ -112,4 +111,65 @@ INSERT INTO photo (file_path, timestamp, latitude, longitude, description)
         -72.723686,
         'Un éléphant au Zoo de Granby.'
     )
+    ;
+
+INSERT INTO tag (name)
+    VALUES
+    ('animaux'),
+    ('plage'),
+    ('coucher de soleil'),
+    ('zoo'),
+    ('tortue'),
+    ('flamant rose'),
+    ('éléphant'),
+    ('girafe'),
+    ('oiseaux')
+    ;
+
+INSERT INTO photo_tag (photo_id, tag_id)
+    VALUES
+    (1, 2),
+    (2, 1),
+    (2, 4),
+    (2, 6),
+    (2, 9),
+    (3, 2),
+    (3, 3),
+    (4, 2),
+    (5, 1),
+    (5, 2),
+    (5, 9),
+    (6, 1),
+    (6, 4),
+    (6, 5),
+    (7, 2),
+    (8, 1),
+    (8, 4),
+    (8, 7),
+    (9, 1),
+    (9, 4),
+    (9, 8),
+    (10, 1),
+    (10, 4),
+    (10, 7)
+    ;
+
+INSERT INTO album (name, featured_photo_id)
+    VALUES
+    ('Zoo de Granby', 2),
+    ('Plages', 3)
+    ;
+    
+INSERT INTO album_photo (album_id, photo_id)
+    VALUES
+    (1, 2),
+    (1, 6),
+    (1, 8),
+    (1, 9),
+    (1, 10),
+    (2, 1),
+    (2, 3),
+    (2, 4),
+    (2, 5),
+    (2, 7)
     ;
