@@ -44,7 +44,7 @@ class AddPhotoController {
 
                     if (move_uploaded_file($tempPath, $newPath)) {
                         $photoId = $this->model->insert($newPath);
-                        header("Location: ?action=view_photo&id=$photoId");
+                        header("Location: ?action=edit_photo&id=$photoId");
                     } else {
                         /*
                         Une erreur a été rencontrée lors du déplacement

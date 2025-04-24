@@ -38,6 +38,11 @@ class PhotoModel {
         $query->execute([$filepath]);
         return $this->db->lastInsertId();
     }
+
+    public function update($id, $description, $timestamp, $latitude, $longitude) {
+        $query = $this->db->prepare('UPDATE photo SET description=?, timestamp=?, latitude=?, longitude=? WHERE id=?');
+        $query->execute([$description, $timestamp, $latitude, $longitude, $id]);
+    }
 }
 
 ?>

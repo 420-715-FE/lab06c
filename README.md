@@ -10,6 +10,13 @@
 * enctype du formulaire + changement dans la façon de détecter un POST dans index.php
 * Expliquer qu'on pourrait éventuellement utiliser EXIF pour extraire les infos des images
 * CSS déjà fait pour la galerie (ul avec id gallery) et le menu (nav avec ul)
+* On ne gère pas la modification des tags (étiquettes) d'une photo pour l'instant
+* On ne gère pas la création/modification des albums pour l'instant
+* Validation timestamp
+* Utiliser input type="datetime-local"
+* Ne pas oublier de faire toutes les validations nécessaires, les trim et les htmlspecialchars
+* S'assurer que les champs laissés vides deviennent NULL dans la BD et non '' (sauf la description)
+* Afficher page de modification après l'ajout
 
 ```html
 <form method="POST" enctype="multipart/form-data">
@@ -60,5 +67,12 @@ if (isset($_FILES['photo'])) {
         un message d'erreur à l'utilisateur.
         */
     }
+}
+```
+
+```php
+function isValidTimestamp($timestamp) {
+    $dateTime = DateTime::createFromFormat('Y-m-d\TH:i', $timestamp);    
+    return $dateTime && $dateTime->format('Y-m-d\TH:i') === $timestamp;
 }
 ```
