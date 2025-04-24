@@ -5,10 +5,10 @@ USE photo_gallery;
 CREATE TABLE photo (
     id INT AUTO_INCREMENT PRIMARY KEY,
     description TEXT NOT NULL DEFAULT '',
-    timestamp DATETIME,
-    latitude DOUBLE,
-    longitude DOUBLE,
-    file_path VARCHAR(4096)
+    timestamp DATETIME DEFAULT NULL,
+    latitude DOUBLE DEFAULT NULL,
+    longitude DOUBLE DEFAULT NULL,
+    filepath VARCHAR(4096)
 );
 
 CREATE TABLE tag (
@@ -39,7 +39,7 @@ CREATE TABLE album_photo (
     FOREIGN KEY (photo_id) REFERENCES photo(id)
 );
 
-INSERT INTO photo (file_path, timestamp, latitude, longitude, description)
+INSERT INTO photo (filepath, timestamp, latitude, longitude, description)
     VALUES
     (
         'images/01c2fe0d-6758-4f0a-945d-0dc44a95f973.jpg',

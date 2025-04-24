@@ -8,12 +8,12 @@ class PhotoModel {
     }
 
     public function getAll() {
-        $query = $this->db->query("SELECT id, description, timestamp, latitude, longitude, file_path FROM photo");
+        $query = $this->db->query("SELECT id, description, timestamp, latitude, longitude, filepath FROM photo");
         return $query->fetchAll();
     }
 
     public function get($id) {
-        $query = $this->db->prepare("SELECT id, description, timestamp, latitude, longitude, file_path FROM photo WHERE id = ?");
+        $query = $this->db->prepare("SELECT id, description, timestamp, latitude, longitude, filepath FROM photo WHERE id = ?");
         $query->execute([$id]);
         $photo = $query->fetch();
 
@@ -31,6 +31,12 @@ class PhotoModel {
         }
 
         return $photo;
+    }
+
+    public function insert($filepath) {
+        $query = $this->db->prepare('INSERT INTO photo(filepath) VALUES(?)');
+        $query->execute([$filepath]);
+        return $this->db->lastInsertId();
     }
 }
 

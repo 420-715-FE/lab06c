@@ -14,7 +14,7 @@ generateHTMLHeader($photo['description']);
     <ul><li><a href="?">Retour</a></li></ul>
 </nav>
 
-<img src="<?= $photo['file_path'] ?>" />
+<img src="<?= $photo['filepath'] ?>" />
 <p><strong>Description: </strong><?= $photo['description'] ?></p>
 <p><strong>Date et heure: </strong><?= $photo['timestamp'] ?></p>
 <p><strong>Latitude: </strong><?= $photo['latitude'] ?></p>

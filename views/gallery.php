@@ -21,7 +21,7 @@ generateHTMLHeader('Galerie de photos');
     <?php foreach ($photos as $photo): ?>
         <li>
             <a href="?action=view_photo&id=<?= $photo['id'] ?>">
-                <img src="<?= $photo['file_path'] ?>" alt="<?= $photo['description'] ?>">
+                <img src="<?= $photo['filepath'] ?>" alt="<?= $photo['description'] ?>">
                 <p><?= $photo["description"] ?></p>
             </a>
         </li>

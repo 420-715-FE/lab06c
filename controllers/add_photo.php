@@ -4,6 +4,21 @@ require_once(__DIR__ . '/../controller.php');
 require_once(__DIR__ . '/../models/photo.php');
 require_once(__DIR__ . '/../helpers.php');
 
+// Source: https://www.usefulids.com/resources/generate-uuid-in-php
+function uuid()
+{
+    // Generate 16 random bytes
+    $data = random_bytes(16);
+
+    // Set the version to 4 (0100 in binary)
+    $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
+    // Set the variant to 2 (10 in binary)
+    $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
+
+    // Return the formatted UUID
+    return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
+}
+
 class AddPhotoController {
     private $model;
 
@@ -28,13 +43,8 @@ class AddPhotoController {
                     $newPath = "images/$newFilename";
 
                     if (move_uploaded_file($tempPath, $newPath)) {
-                        /*
-                        Le fichier a été téléversé correctement et
-                        se trouve maintenant dans le dossier « images ».
-                        La valeur de la variable $newPath peut être
-                        utilisée pour l'ajout de la photo dans la base
-                        de données.
-                        */
+                        $photoId = $this->model->insert($newPath);
+                        header("Location: ?action=view_photo&id=$photoId");
                     } else {
                         /*
                         Une erreur a été rencontrée lors du déplacement
