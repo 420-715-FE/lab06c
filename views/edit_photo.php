@@ -11,10 +11,7 @@ generateHTMLHeader($photo['description']);
 <h1>Photo</h1>
 
 <nav>
-    <ul>
-        <li><a href="?">Retour</a></li>
-        <li><a href="?action=edit_photo&id=<?= $photo['id'] ?>">Modifier</a></li>
-    </ul>
+    <ul><li><a href="?">Retour</a></li></ul>
 </nav>
 
 <img src="<?= $photo['filepath'] ?>" />

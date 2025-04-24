@@ -9,6 +9,7 @@
 * Erreur 404
 * enctype du formulaire + changement dans la façon de détecter un POST dans index.php
 * Expliquer qu'on pourrait éventuellement utiliser EXIF pour extraire les infos des images
+* CSS déjà fait pour la galerie (ul avec id gallery) et le menu (nav avec ul)
 
 ```html
 <form method="POST" enctype="multipart/form-data">
