@@ -14,6 +14,14 @@ generateHTMLHeader($photo['description']);
     <ul>
         <li><a href="?">Retour</a></li>
         <li><a href="?action=edit_photo&id=<?= $photo['id'] ?>">Modifier</a></li>
+        <li>
+            <a
+                href="?action=delete_photo&id=<?= $photo['id'] ?>"
+                onclick="return confirm('Voulez-vous vraiment supprimer cette photo?')"
+            >
+                Supprimer
+            </a>
+        </li>
     </ul>
 </nav>
 

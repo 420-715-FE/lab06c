@@ -20,23 +20,23 @@ CREATE TABLE photo_tag (
     photo_id INT,
     tag_id INT,
     PRIMARY KEY (photo_id, tag_id),
-    FOREIGN KEY (photo_id) REFERENCES photo(id),
-    FOREIGN KEY (tag_id) REFERENCES tag(id)
+    FOREIGN KEY (photo_id) REFERENCES photo(id) ON DELETE CASCADE,
+    FOREIGN KEY (tag_id) REFERENCES tag(id) ON DELETE CASCADE
 );
 
 CREATE TABLE album (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) UNIQUE,
     featured_photo_id INT,
-    FOREIGN KEY (featured_photo_id) REFERENCES photo(id)
+    FOREIGN KEY (featured_photo_id) REFERENCES photo(id) ON DELETE SET NULL
 );
 
 CREATE TABLE album_photo (
     album_id INT,
     photo_id INT,
     PRIMARY KEY (album_id, photo_id),
-    FOREIGN KEY (album_id) REFERENCES album(id),
-    FOREIGN KEY (photo_id) REFERENCES photo(id)
+    FOREIGN KEY (album_id) REFERENCES album(id) ON DELETE CASCADE,
+    FOREIGN KEY (photo_id) REFERENCES photo(id) ON DELETE CASCADE
 );
 
 INSERT INTO photo (filepath, timestamp, latitude, longitude, description)

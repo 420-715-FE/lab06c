@@ -43,6 +43,11 @@ class PhotoModel {
         $query = $this->db->prepare('UPDATE photo SET description=?, timestamp=?, latitude=?, longitude=? WHERE id=?');
         $query->execute([$description, $timestamp, $latitude, $longitude, $id]);
     }
+
+    public function delete($id) {
+        $query = $this->db->prepare('DELETE FROM photo WHERE id=?');
+        $query->execute([$id]);
+    }
 }
 
 ?>

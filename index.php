@@ -5,6 +5,7 @@ require_once('controllers/gallery.php');
 require_once('controllers/view_photo.php');
 require_once('controllers/add_photo.php');
 require_once('controllers/edit_photo.php');
+require_once('controllers/delete_photo.php');
 
 $controller = new GalleryController($db);
 
@@ -20,6 +21,9 @@ switch ($action) {
         break;
     case 'edit_photo':
         $controller = new EditPhotoController($db);
+        break;
+    case 'delete_photo':
+        $controller = new DeletePhotoController($db);
         break;
     case 'gallery':
     default:
