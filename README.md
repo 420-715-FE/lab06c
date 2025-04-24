@@ -11,7 +11,7 @@
 * Expliquer qu'on pourrait éventuellement utiliser EXIF pour extraire les infos des images
 * CSS déjà fait pour la galerie (ul avec id gallery) et le menu (nav avec ul)
 * On ne gère pas la modification des tags (étiquettes) d'une photo pour l'instant
-* On ne gère pas la création/modification des albums pour l'instant
+* On ne gère pas la création/modification/suppression des albums pour l'instant
 * Validation timestamp
 * Utiliser input type="datetime-local"
 * Ne pas oublier de faire toutes les validations nécessaires, les trim et les htmlspecialchars
