@@ -3,7 +3,7 @@
 require_once(__DIR__ . '/../controller.php');
 require_once(__DIR__ . '/../models/photo.php');
 
-class PhotoController {
+class ViewPhotoController {
     private $model;
 
     public function __construct($db) {
@@ -22,7 +22,7 @@ class PhotoController {
             return;
         }
 
-        include(__DIR__ . '/../views/photo.php');
+        include(__DIR__ . '/../views/view_photo.php');
     }
 }
 

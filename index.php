@@ -2,7 +2,8 @@
 
 require_once('db.php');
 require_once('controllers/gallery.php');
-require_once('controllers/photo.php');
+require_once('controllers/view_photo.php');
+require_once('controllers/add_photo.php');
 
 $controller = new GalleryController($db);
 
@@ -10,8 +11,11 @@ $action = $_GET['action'] ?? 'gallery';
 
 $controller = null;
 switch ($action) {
-    case 'view':
-        $controller = new PhotoController($db);
+    case 'view_photo':
+        $controller = new ViewPhotoController($db);
+        break;
+    case 'add_photo':
+        $controller = new AddPhotoController($db);
         break;
     case 'gallery':
     default:
