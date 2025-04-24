@@ -31,6 +31,8 @@ class AddPhotoController {
     }
 
     public function handlePost($get, $post) {
+        $erreur = null;
+
         if (isset($_FILES['photo'])) {
             if ($_FILES['photo']['error'] == UPLOAD_ERR_OK) {
                 $filename = $_FILES['photo']['name'];
@@ -46,25 +48,18 @@ class AddPhotoController {
                         $photoId = $this->model->insert($newPath);
                         header("Location: ?action=edit_photo&id=$photoId");
                     } else {
-                        /*
-                        Une erreur a été rencontrée lors du déplacement
-                        du fichier vers le dossier « images ». Il faudrait
-                        donc indiquer à l'utilisateur que le téléversement
-                        de la photo a échoué.
-                        */
+                        $erreur = 'Une erreur est survenue sur le serveur.';
                     }
                 } else {
-                    /*
-                    Le fichier reçu n'est pas une image. Il faudrait
-                    donc afficher un message d'erreur à l'utilisateur.
-                    */
+                    $erreur = "Le fichier sélectionné n'est pas une image.";
                 }
             } else {
-                /*
-                Le téléversement a échoué. Il faudrait donc afficher
-                un message d'erreur à l'utilisateur.
-                */
+                $erreur = 'Une erreur est survenue lors du téléversement.';
             }
+        }
+
+        if ($erreur) {
+            include(__DIR__ . '/../views/add_photo.php');
         }
     }
 }
