@@ -116,8 +116,6 @@ Les [UUID](https://fr.wikipedia.org/wiki/Universally_unique_identifier) sont des
 
 > Pour que le téléversement de fichiers fonctionne, il faut aussi vous assurer que votre installation PHP est configurée pour accepter les téléversements. Pour ce faire, utilisez les menus de XAMPP pour accéder au fichier `php.ini`, et assurez-vous que le paramètre `file_uploads` a la valeur `On`. Assurez-vous aussi que `upload_max_filesize` a une valeur suffisante.
 
-À inclure dans le README:
-
 ## Feuilles de style
 
 Utilisez les feuilles de style `water.css` et `gallery.css` dans toutes vos vues.
