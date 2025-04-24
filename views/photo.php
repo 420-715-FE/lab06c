@@ -8,8 +8,10 @@ generateHTMLHeader($photo['description']);
 
 <body>
 
+<h1>Photo</h1>
+
 <nav>
-    <a href="?">Retour</a>
+    <ul><li><a href="?">Retour</a></li></ul>
 </nav>
 
 <img src="<?= $photo['file_path'] ?>" />

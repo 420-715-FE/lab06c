@@ -1,3 +1,21 @@
+nav {
+    background-color: #283545;
+    border-radius: 8px;
+    padding: 2px 16px;
+    margin-bottom: 16px;
+}
+
+nav li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+nav li:not(:last-child)::after {
+    content: " | ";
+    margin: 0 8px;
+}
+
 #gallery {
     display: flex;
     flex-wrap: wrap;

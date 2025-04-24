@@ -10,6 +10,13 @@ generateHTMLHeader('Galerie de photos');
 
 <h1>Galerie de photos</h1>
 
+<nav>
+    <ul>
+        <li>Galerie</li>
+        <li><a href="?action=add_photo">Ajouter une photo</a></li>
+    </ul>
+</nav>
+
 <ul id="gallery">
     <?php foreach ($photos as $photo): ?>
         <li>
