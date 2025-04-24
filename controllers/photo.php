@@ -11,7 +11,17 @@ class PhotoController {
     }
 
     public function handle($get) {
+        if (!isset($get['id'])) {
+            header("Location: 404.php");
+            return;
+        }
+
         $photo = $this->model->get($get['id']);
+        if (!$photo) {
+            header("Location: 404.php");
+            return;
+        }
+
         include(__DIR__ . '/../views/photo.php');
     }
 }
