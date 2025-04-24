@@ -17,6 +17,12 @@ generateHTMLHeader($photo['description']);
 <p><strong>Date et heure: </strong><?= $photo['timestamp'] ?></p>
 <p><strong>Latitude: </strong><?= $photo['latitude'] ?></p>
 <p><strong>Longitude: </strong><?= $photo['longitude'] ?></p>
+<p><strong>Étiquettes: </strong></p>
+<ul>
+    <?php foreach ($photo['tags'] as $tag): ?>
+        <li><?= $tag ?></li>
+    <?php endforeach; ?>
+</ul>
 
 </body>
 </html>
