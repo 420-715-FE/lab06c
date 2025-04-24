@@ -23,7 +23,7 @@ switch ($action) {
         break;
 }
 
-if (!empty($_POST)) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $controller->handlePost($_GET, $_POST);
 } else {
     $controller->handle($_GET);

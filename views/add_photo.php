@@ -14,8 +14,11 @@ generateHTMLHeader('Ajouter une photo');
     <ul><li><a href="?">Retour</a></li></ul>
 </nav>
 
-<form method="POST">
-    
+<form method="POST" enctype="multipart/form-data">
+    <label for="photo">Choisissez une photo :</label>
+    <input type="file" id="photo" name="photo" accept="image/*">
+    <input type="submit" value="Téléverser">
+    <label for=""></label>
 </form>
 
 </body>
