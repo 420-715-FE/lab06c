@@ -1,0 +1,40 @@
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#gallery img {
+    max-width: 100%;
+    max-height: 200px;
+    width: auto;
+    height: auto; 
+    display: block;
+    border-radius: 8px;
+}
+
+#gallery li {
+    flex: 1 1 calc(25% - 16px); 
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    #gallery li {
+        flex: 1 1 calc(33.33% - 16px);
+    }
+}
+
+@media (max-width: 768px) {
+    #gallery li {
+        flex: 1 1 calc(50% - 16px);
+    }
+}
+
+@media (max-width: 480px) {
+    #gallery li {
+        flex: 1 1 100%;
+    }
+}
