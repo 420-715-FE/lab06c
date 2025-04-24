@@ -1,5 +1,7 @@
 # Laboratoire 06-C
 
+![](images-readme/demo.gif)
+
 À inclure dans le README:
 
 * Configuration de PHP pour l'upload
