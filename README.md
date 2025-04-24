@@ -1,6 +1,23 @@
 # Laboratoire 06-C
 
+Dans le cadre de ce laboratoire, vous devez développer une application de type « Galerie de photos » simple en utilisant la base de données MySQL fournie, de même que l'architecture MVC. À la fin de ce laboratoire, il manquera certaines fonctionnalités pour que l'application soit complète. Vous ajouterez ces fonctionnalités lors des laboratoires ultérieurs.
+
+Commencez par prendre connaissance de la base de données fournie, et assurez-vous de bien comprendre sa structure. N'hésitez pas à générer un diagramme dans phpMyAdmin afin de mieux comprendre.
+
+Voici les fonctionnalités que vous devez implémenter dans ce laboratoire:
+
+* Afficher la galerie de photos
+* Cliquer sur une photo spécifique pour l'afficher avec ses informations
+* Modifier les informations d'une photo
+* Supprimer une photo
+* Afficher la liste des albums
+* Afficher les photos d'un album
+
+Voici un aperçu de l'application à développer:
+
 ![](images-readme/demo.gif)
+
+
 
 À inclure dans le README:
 
